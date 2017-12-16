@@ -23,6 +23,7 @@ stages{
                 failure{
                     echo 'Deployment to Staging failed...'
                 }
+            }
         }
     }
 }
