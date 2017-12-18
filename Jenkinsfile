@@ -12,5 +12,18 @@ stages{
                 }
             }
         }
+        stage('Deploy to Staging'){
+            steps {
+                build job: 'PipelineDeployToStaging'
+            }
+            post{
+                success{
+                    echo 'Code deployed to Staging...'
+                }
+                failure{
+                    echo 'Deployment to Staging failed...'
+                }
+            }
+        }
     }
 }
